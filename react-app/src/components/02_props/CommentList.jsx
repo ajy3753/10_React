@@ -33,7 +33,11 @@ const CommentList = () => {
     <div>
         {
             comments.map(c => {
-                return <Comment key={c.id} name={c.name} comment={c.comment} path={c.path} />
+                return <Comment key={c.id}
+                                name={c.name}
+                                comment={c.comment}
+                                path={c.path}
+                        />
             })
         }
     </div>

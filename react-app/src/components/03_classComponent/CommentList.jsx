@@ -56,7 +56,10 @@ class CommentList extends Component {
         {
           this.state.commentList.map(c => {
             return (
-              <Comment key={c.id} id={c.id} message={c.message} />
+              <Comment key={c.id}
+                       id={c.id}
+                       message={c.message}
+              x />
             )
           })
         }
