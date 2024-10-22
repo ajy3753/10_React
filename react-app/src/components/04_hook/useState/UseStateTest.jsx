@@ -36,3 +36,5 @@ const UseStateTest = () => {
         </div>
     )
 }
+
+export default UseStateTest

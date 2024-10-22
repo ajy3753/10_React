@@ -1,3 +1,4 @@
+import React, {useEffect, useState} from 'react';
 
 /*
    [useEffect]
@@ -56,7 +57,7 @@ const UseEffectTest = () => {
    return (
       <div>
          <p>안녕하세요. {name}입니다.</p>
-         <inmput type="text" onChange={handlekeyUpName} value={name} />
+         <inmput type="text" onChange={handleKeyUpName} value={name} />
          <p>{num}번 클릭</p>
          <button onClick={handleClickNum}>+</button>
       </div>

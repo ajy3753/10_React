@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, {useState} from 'react';
 
 // 제출 버튼을 클릭 시 alert를 이용하여 이름과 성별을 보여주는 팝업
 const SignUp = () => {
    // let name = "", gender = "";
    const [name, setName] = useState("");
-   const [gender, setGender] = useGender("man");
+   const [gender, setGender] = useState("man");
 
    const handleChangeName = (ev) => {
       setName(ev.target.value);
@@ -24,14 +24,14 @@ const SignUp = () => {
       <form onSubmit={handleSubmit}>
          <label>
             이름 :
-            <input type="text" value={name} onchange={handleChangeGender} />
+            <input type="text" value={name} onchange={handleChangeName} />
          </label>
 
          <br /><br />
 
          <label>
             성별 :
-            <select value={gender} onChange={handelChangeGender}>
+            <select value={gender} onChange={handleChangeGender}>
                <option value="man">남자</option>
                <option value="woman">여자</option>
             </select>
@@ -44,4 +44,4 @@ const SignUp = () => {
    )
 }
 
-export default SingUp
+export default SignUp

@@ -20,7 +20,7 @@ import React from 'react';
     - props가 변하면 자식 요소는 리랜더링을 한다
 */
 
-const Fodd = (props) => {
+const Food = (props) => {
     return (
         <div>
             <h1>이 음식의 이름은 {props.name}입니다.</h1>

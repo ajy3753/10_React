@@ -34,7 +34,7 @@ class Comment extends Component {
     }
 
     componentDidMount() {
-        colsole.log('${this.props.id의 componentDidMount 실행됨');
+        console.log('${this.props.id의 componentDidMount 실행됨');
     }
 
     componentDidUpdate() {
