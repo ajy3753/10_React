@@ -1,15 +1,17 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import ViewState from './ViewState';
 
 /*
     [useMemo]
-    useMemo는 Memori
+    - useMemo는 Memoization 기법을 사용한 react hook이다.
+    - 한 번 연산해 본 결과를 기억해두고, 컴포넌트가 리랜더링 될 때 의존성 배열에 있는 값이 변경되지 않으면 이전의 계산된 값을 반환한다.
+    - 주로 복잡한 연산에 사용한다.
 
     [사용법]
     useMemo(() => {}, [])
 
-    첫 번째 인자는 메모라이제이션 해줄 함수
-    두번 째 인자는 의존성 배열
+    - 첫 번째 인자는 메모이제이션 해줄 함수
+    - 두 번째 인자는 의존성 배열
 */
 
 const useMemoTest = () => {

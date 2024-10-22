@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ViewItem = ({getItems}) => {
     const [items, setItems] = useState([]);
@@ -9,6 +9,8 @@ const ViewItem = ({getItems}) => {
     }, [getItems])
 
     return (
-        items.map((item, index) => <div key=""></div>)
+        items.map((item, index) => <div key={index}>{item}</div>)
     )
 }
+
+export default ViewItem
