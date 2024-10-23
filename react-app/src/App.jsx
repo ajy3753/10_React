@@ -9,7 +9,7 @@ import './App.css';
 */
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import Products from './components/05_styledComponents/Products0;';
+import Products from './components/05_styledComponents/Products';
 import Home from './pages/Home';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
