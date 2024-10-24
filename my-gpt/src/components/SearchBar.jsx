@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import {FaArrowUp} from 'react-icons/fa';
 
-const SearchBar = ({searchText, changeSearchTextm, clickSearchIcon}) => {
+const SearchBar = ({searchText, changeSearchText, clickSearchIcon}) => {
     return (
         <SearchBarContainer>
             <SearchInput

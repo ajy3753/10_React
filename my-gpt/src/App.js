@@ -1,36 +1,55 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import {Title, DescriptText} from './components/CommonsStyles';
 import SearchBar from './components/SearchBar';
-import {useState} from 'react';
+import ChatDisplay from './components/ChatDisplay';
 import {CallGpt, CallGptAxios} from './service/gptAPI';
 
 function App() {
   const [searchText, setSearchText] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [chatDataList, setChatDataList] = useState(localStorage.getItem("chatList") ? JSON.parse(localStorage.getItem("chatList")) : []);
 
   const changeSearchText = (ev) => {
     setSearchText(ev.target.value);
   }
 
-  const clickSearchIcon = async() => {
-    if(searchText.trim() === "") {
+  const clickSearchIcon = async () => {
+    if(searchText.trim() === "")
       return;
 
-      const chatData = {
-        date: new Date(),
-        question: searchText,
-      }
+    const chatData = {
+      date: new Date().getTime(),
+      question: searchText
     }
 
-    const message = await CallGptAxios({
-      prompt: searchText
-    })
+    try{
+      setIsLoading(true);
+      setSearchText("");
 
-    chatData.message = message;
+      const message = await CallGptAxios({
+        prompt: chatData.question
+      })
 
-    console.log(chatData);
+      chatData.message = message;
+
+      setChatDataList([
+        ...chatDataList,
+        chatData
+      ])
+    } catch(error){
+      console.log(error)
+    } finally {
+      setIsLoading(false);
+    }
   }
+
+  // chatDataList의 값이 변경되면 localStorage에 저장
+  useEffect(() => {
+    localStorage.setItem("chatList", JSON.stringify(chatDataList))
+  }, [chatDataList])
 
   return (
     <AppContainer className="App">
@@ -39,11 +58,14 @@ function App() {
       </Header>
 
       <Contents>
-
+        <ChatDisplay 
+          chatDataList = {chatDataList}
+          isLoading = {isLoading}
+        />
       </Contents>
 
       <Footer>
-        <SearchBar
+        <SearchBar 
           searchText = {searchText}
           changeSearchText = {changeSearchText}
           clickSearchIcon = {clickSearchIcon}
@@ -79,6 +101,9 @@ const Contents = styled.div`
   flex: 1;
   padding: 60px 0 0 0;
   overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 const Footer = styled.div`
