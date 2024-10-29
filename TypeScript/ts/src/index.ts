@@ -3,7 +3,7 @@
     * 관리자 권한으로 실행!
 
     1. 'ts' 폴더 생성
-    2. 터미널 > $cs ./ts/
+    2. 터미널 > $cd ./ts/
     3. $npm init
     4. $npm i @type/node
     5. $npm i -g typescript
@@ -26,3 +26,5 @@ const test = (text : string) => {
 }
 
 test("안녕 타입스크립트");
+
+const tmp = 4;
