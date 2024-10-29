@@ -1,4 +1,4 @@
-//타입 별칭부여
+// 타입 별칭부여
 type User = {
     user_id: number;
     id: string;
@@ -21,7 +21,7 @@ function test(){
 }
 
 type SidoCode = {
-    [key: string] : string; //키, 벨류를 모두 string으로 정의하겠다
+    [key: string] : string; //키, 밸류를 모두 string으로 정의하겠다
     seoul : string; //키가 seoul인 값이 필수이며 값은 string으로 하겠다.
 }
 

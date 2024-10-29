@@ -1,17 +1,15 @@
-//배열
+// 배열
 let numArr: number[] = [10,20,30];
-
 let strArr1: string[] = ["my", "name", "is", "jiwon"];
-
 let strArr2: Array<string> = ["my", "name", "is", "jiwon"];
 
-//배열에 들어가는 타입이 두가지 이상이다.
+// 배열에 들어가는 타입이 두가지 이상이다.
 let multiArr: (string | number)[] = [10, "jiwon", 20];
 
-//튜플
+// 튜플
 let tup1: [boolean, string, number] = [true, "two", 30];
 
-//객체
+// 객체
 // let user = {
 //     name: "jiwon",
 //     age: 20,

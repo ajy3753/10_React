@@ -1,11 +1,22 @@
 import './App.css';
 
 /*
+  [React 설치]
+  1. 설치된 Node.js가 최신 버전인지 확인 (최신이 아니라면 업데이트)
+  2. 터미널을 열어 React 프로젝트를 설치하려는 경로로 이동
+  3. 설치 명령어 입력
+  1) $npm install -g create-react-app
+  2) $npx create-react-app my-app
+  4. $npm start 실행 후 브라우저에서 http://localhost:300 열기 -> 제대로 연결된다면 성공
+
+  * 프로젝트에 node_modules 폴더가 없는 경우
+  -> $npm i 입력
+
   [Run 방법]
   1. 기존에 존재하던 App.jsx 파일 삭제
   2. App.js 파일을 App.jsx 파일로 확장자 변경
   3. 터미널을 열어서 cd react-app/src 로 이동 (src 폴더에서 터미널 열기를 해도 OK)
-  4. npm run 입력 -> 실행 확인
+  4. $npm run 입력 -> 실행 확인
 */
 
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
