@@ -21,10 +21,15 @@
     
 */
 
-const test = (text : string) => {
-    console.log("text");
+const test = (text : string) : string => {
+    console.log(text);
+    return "안녕";
 }
+let str = test("안녕 타입스크립트")
 
-test("안녕 타입스크립트");
-
-const tmp = 4;
+type Human = {
+    name : string
+}
+let human : Human = {
+    name: "Jhone"
+}
